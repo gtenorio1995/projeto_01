@@ -152,6 +152,7 @@
 @media screen and (min-width: 1200px) {
     header {
         grid-template-columns: repeat(12, 80px);
+        align-items: center;
 
         .brand {
             grid-column: 1 / 4;
@@ -161,7 +162,7 @@
             grid-column: 8 / 13;
             display: grid;
             row-gap: converter(32);
-            background-color: colors.$cm-02;
+            background-color: colors.$cd-02;
             transform: translate3d(0, 0, 0);
             transition: all 0.6s ease-in-out;
 
