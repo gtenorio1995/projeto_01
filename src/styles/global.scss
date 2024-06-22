@@ -1,0 +1,18 @@
+// import config
+@use './config/reset.scss';
+@use 'sass:math';
+
+// import components
+@use './components/header.scss';
+@use './components/main.scss';
+@use './components/footer.scss';
+
+// funções
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+}

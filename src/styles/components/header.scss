@@ -1,0 +1,191 @@
+// import config
+@use '../config/colors.scss';
+@use 'sass:math';
+
+// funções
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+@media screen and (min-width: 360px) {
+    header {
+        display: grid;
+        grid-template-columns: repeat(4, 80px);
+        column-gap: converter(8);
+        justify-content: center;
+        padding: converter(24) converter(8);
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+
+        background-color: colors.$cd-02;
+
+        .brand {
+            text-align: center;
+            grid-column: 1 / 4;
+            justify-self: start;
+
+            color: colors.$cl-01;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: converter(24);
+        }
+
+        nav {
+            display: block;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            row-gap: converter(32);
+            background-color: colors.$cm-03;
+            transform: translate3d(0, -150%, 0);
+            transition: all 0.6s ease-in-out;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                row-gap: converter(32);
+                align-items: center;
+
+                li {
+                    padding-bottom: converter(32);
+                    display: flex;
+                    padding-block: converter(32);
+
+                    a {
+                        color: colors.$cl-01;
+                    }
+                }
+            }
+
+            &.ativo {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        #btn-menu {
+            grid-column: 4 / 5;
+            justify-self: end;
+
+            display: flex;
+            flex-direction: column;
+            row-gap: converter(4);
+
+            justify-content: center;
+            align-items: end;
+            background-color: transparent;
+            border: none;
+
+            span {
+                display: block;
+                height: converter(4);
+                background-color: colors.$cl-01;
+                transition: all 0.6s ease-in-out;
+
+
+                &:nth-child(1) {
+                    width: converter(32);
+                    border-top-right-radius: converter(4);
+                    border-bottom-left-radius: converter(4);
+                }
+
+                &:nth-child(2) {
+                    width: converter(16);
+                    border-radius: converter(4);
+                }
+
+                &:nth-child(3) {
+                    width: converter(24);
+                    border-bottom-right-radius: converter(4);
+                    border-top-left-radius: converter(4);
+                }
+            }
+
+            &.ativo {
+                span {
+                    &:nth-child(1) {
+                        width: converter(32);
+                        border-top-right-radius: converter(4);
+                        border-bottom-left-radius: converter(4);
+                        transform: rotate(135deg) translate(4px, -8px);
+                        background-color: #b80000;
+                    }
+
+                    &:nth-child(2) {
+                        width: converter(0);
+                        background-color: #b80000;
+                        border-radius: converter(4);
+                        opacity: 0;
+                    }
+
+                    &:nth-child(3) {
+                        width: converter(32);
+                        background-color: #b80000;
+                        border-bottom-right-radius: converter(4);
+                        border-top-left-radius: converter(4);
+                        transform: rotate(-135deg) translate(3px, 7px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    header {
+        grid-template-columns: repeat(6, 80px);
+        column-gap: converter(24);
+
+        padding: converter(24);
+
+        .brand {
+            grid-column: 1 / 4;
+        }
+
+        #btn-menu {
+            grid-column: 6 / 7;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    header {
+        grid-template-columns: repeat(12, 80px);
+
+        .brand {
+            grid-column: 1 / 4;
+        }
+
+        nav {
+            grid-column: 8 / 13;
+            display: grid;
+            row-gap: converter(32);
+            background-color: colors.$cm-02;
+            transform: translate3d(0, 0, 0);
+            transition: all 0.6s ease-in-out;
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                row-gap: converter(32);
+                align-items: center;
+
+                li {
+                    padding-bottom: converter(32);
+                    display: flex;
+                    padding-block: converter(24);
+
+                    a {
+                        color: colors.$cl-01;
+                    }
+                }
+            }
+        }
+
+        #btn-menu {
+            display: none;
+        }
+    }
+}

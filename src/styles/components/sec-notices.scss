@@ -1,0 +1,74 @@
+// import config
+@use '../config/colors.scss';
+@use 'sass:math';
+
+// funções
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+@media screen and (min-width: 360px) {
+    #notice {
+        margin-top: converter(96);
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: converter(8);
+        justify-content: center;
+        padding: converter(24) converter(8);
+
+        background-color: colors.$cl-01;
+
+        >p {
+            padding-block: converter(16);
+        }
+
+        a {
+            color: colors.$cm-01;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+
+            &::after {
+                content: '';
+                display: block;
+                height: converter(4);
+                background-color: colors.$cm-01;
+                width: converter(16);
+                border-top-left-radius: converter(4);
+                border-bottom-right-radius: converter(4);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #notice {
+        margin-top: converter(96);
+        grid-template-columns: repeat(6, 80px);
+        column-gap: converter(24);
+        padding: converter(24);
+
+        >img {
+            grid-column: 1 / -1;
+        }
+
+        >p {
+            grid-column: 1 / -1;
+        }
+
+        a {
+            color: colors.$cm-01;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+
+            &::after {
+                content: '';
+                display: block;
+                height: converter(4);
+                background-color: colors.$cm-01;
+                width: converter(16);
+                border-top-left-radius: converter(4);
+                border-bottom-right-radius: converter(4);
+            }
+        }
+    }
+}

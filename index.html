@@ -4,98 +4,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <title>Corinthians - Paixão e Loucura</title>
     <link rel="stylesheet" href="build/main.css">
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <h1>Corinthians</h1>
-            <span>Paixão e Loucura</span>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="conteiner-geral">
-            <div class="conteiner-primary">
-                <section id="notice">
-                    <h2>Noticias</h2>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Gil_Corinthians_IMG_3058.jpg"
-                        alt="Jogados Gil">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod, quaerat, quasi, quidem,
-                        quibusdam, quod, quaerat, quasi.</p>
-                    <a href="">Leia mais</a>
-                </section>
-                <section id="about">
-                    <h2>O Campeão dos Campeões</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod, quaerat, quasi, quidem,
-                        quibusdam, quod, quaerat, quasi. <br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis impedit, dicta minus, praesentium
-                        distinctio aliquam reprehenderit quam amet quidem, in pariatur! Voluptates excepturi sint animi
-                        tenetur, perferendis voluptatum debitis nemo? <br>
-                    </p>
-                    <div class="trofeus">
-                        <img title="Titulo da Libertadores"
-                            src="https://www.otempo.com.br/image/contentid/policy:1.2693525:1656939154/WhatsApp-Image-2022-07-04-at-09-52-11-1-jpeg.jpeg?f=3x2&w=1224"
-                            alt="Titulo da Libertadores">
-                        <img src="https://cdn.meutimao.com.br/_upload/historia/titulos-conquistados/campeonato_brasileiro_2017.jpg"
-                            alt="Titulo campeonato brasileiro 2017">
-                        <img src="https://jpimg.com.br/uploads/2017/04/I_20090702_013338.jpg"
-                            alt="Titulo copa do Brail">
-                        <img src="https://img.r7.com/images/corinthians-20032019155458861?dimensions=660x360"
-                            alt="Titulo Mundial de clubes">
-                    </div>
-                </section>
+    <div id="app">
+        <header>
+            <div class="brand">
+                <h1>Corinthians</h1>
+                <span>Paixão e Loucura</span>
             </div>
-            <div class="conteiner-secondary">
-                <section id="contact">
-                    <h2>Contato</h2>
-                    <form>
-                        <p>
-                            <label for="name">Nome</label>
-                            <input type="text" id="name" name="name">
-                        </p>
-                        <p>
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email">
-                        </p>
-                        <p>
-                            <label for="message">Mensagem</label>
-                            <textarea id="message" name="message"></textarea>
-                        </p>
-                        <p>
-                            <button type="submit">ENVIAR</button>
-                        </p>
-                    </form>
-                </section>
-                <section id="networks">
-                    <h2>Redes Sociais</h2>
-                    <div class="redes">
-                        <img src="./img/facebook.png" alt="facebook">
-                        <img src="./img/instagram.png" alt="instagram">
-                        <img src="./img/youtube.png" alt="youtube">
-                    </div>
-                </section>
-                <section id="address">
-                    <h2>Venha até nós</h2>
+            <nav>
+                <ul>
+                    <li><a href="#notice">Home</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+
+            <button type="button" id="btn-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+
+        <main>
+            <section id="notice">
+                <h2>Noticias</h2>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Gil_Corinthians_IMG_3058.jpg"
+                    alt="Jogados Gil">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod, quaerat, quasi,
+                    quidem,
+                    quibusdam, quod, quaerat, quasi.</p>
+                <a href="">Leia mais</a>
+            </section>
+            <section id="about">
+                <h2>O Campeão dos Campeões</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod, quaerat, quasi,
+                    quidem,
+                    quibusdam, quod, quaerat, quasi. <br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis impedit, dicta minus,
+                    praesentium
+                    distinctio aliquam reprehenderit quam amet quidem, in pariatur! Voluptates excepturi sint
+                    animi
+                    tenetur, perferendis voluptatum debitis nemo? <br>
+                </p>
+                <img class="img-grid-01"
+                    src="https://cdn.meutimao.com.br/_upload/historia/titulos-conquistados/libertadores_feminina_2023.jpg"
+                    alt="Titulo da Libertadores Feminino">
+                <img class="img-grid-02"
+                    src="https://cdn.meutimao.com.br/_upload/historia/titulos-conquistados/campeonato_brasileiro_2017.jpg"
+                    alt="Titulo campeonato brasileiro 2017">
+                <img class="img-grid-03" src="https://jpimg.com.br/uploads/2017/04/I_20090702_013338.jpg"
+                    alt="Titulo copa do Brail">
+                <img class="img-grid-04"
+                    src="https://img.r7.com/images/corinthians-20032019155458861?dimensions=660x360"
+                    alt="Titulo Mundial de clubes">
+                <img class="img-grid-05"
+                    src="https://classic.exame.com/wp-content/uploads/2024/04/171270823238f629170ac3ab74b9d6d2cc411c2f3c.jpg?quality=70&strip=info&w=1024"
+                    alt="Titulo Mundial de clubes">
+            </section>
+            <section id="contact">
+                <h2>Contato</h2>
+                <form>
                     <p>
-                    <address>Rua exemplo<br>Nº 500<br>Itaquera/SP<br>CEP: 00000-001</address>
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name">
                     </p>
-                </section>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <span>EBAC Cursos</span>
-        <p>&copy; Todos os direitos reservados | Gabriel Tenório de Oliveira</p>
-    </footer>
+                    <p>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </p>
+                    <p>
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message"></textarea>
+                    </p>
+                    <p>
+                        <button id="btn-enviar" type="submit">ENVIAR</button>
+                    </p>
+                </form>
+            </section>
+            <section id="networks">
+                <h2>Redes Sociais</h2>
+                <div class="redes">
+                    <img src="./img/facebook.png" alt="facebook">
+                    <img src="./img/instagram.png" alt="instagram">
+                    <img src="./img/youtube.png" alt="youtube">
+                </div>
+            </section>
+            <section id="address">
+                <h2>Venha até nós</h2>
+                <address>Rua exemplo<br>Nº 500<br>Itaquera/SP<br>CEP: 00000-001</address>
+            </section>
+        </main>
+
+        <footer>
+            <span>EBAC Cursos</span>
+            <p>&copy; Todos os direitos reservados</p>
+            <p>Gabriel Tenório de Oliveira</p>
+        </footer>
+    </div>
+
+    <script src="./src/scripts/main.js"></script>
 </body>
 
 </html>

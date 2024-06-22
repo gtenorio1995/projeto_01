@@ -1,0 +1,24 @@
+// import config
+@use '../config/colors.scss';
+@use 'sass:math';
+
+// funções
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+@media screen and (min-width: 360px) {
+    footer {
+
+        background-color: colors.$cd-01;
+        color: colors.$cl-01;
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: converter(8);
+        justify-content: center;
+        padding: converter(24) converter(8);
+
+        justify-items: center;
+        row-gap: converter(16);
+    }
+}

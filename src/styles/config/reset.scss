@@ -1,0 +1,47 @@
+// import config
+@use './colors.scss';
+@use 'sass:math';
+
+// funções
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100dvw;
+    height: 100dvh;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    margin: 0 auto;
+    background-color: colors.$cl-01;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    line-height: converter(32);
+    margin-bottom: converter(16);
+}
+
+img {
+    width: 100%;
+}
+
+section {
+    scroll-margin-top: 96px;
+}

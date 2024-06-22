@@ -1,0 +1,90 @@
+// import config
+@use '../config/colors.scss';
+@use 'sass:math';
+
+// funções
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+@media screen and (min-width: 360px) {
+    #about {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: converter(8);
+        justify-content: center;
+        padding: converter(24) converter(8);
+
+        background-color: colors.$branco;
+
+        >p {
+            padding-bottom: converter(16);
+        }
+
+        >img {
+            margin-bottom: converter(16);
+        }
+
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #about {
+        display: grid;
+        grid-template-columns: repeat(6, 80px);
+        grid-template-rows: repeat(3, 150px);
+        gap: converter(16);
+        justify-content: center;
+        padding: converter(24);
+
+        h2 {
+            grid-column: 1 / 5;
+            grid-row: 1;
+            align-self: center;
+        }
+
+        >p {
+            align-self: center;
+            grid-column: 1 / 5;
+            grid-row: 2;
+        }
+
+        >img {
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .img-grid-01 {
+            grid-column: 5 / 7;
+            height: 100%;
+        }
+
+        .img-grid-02 {
+            grid-column: 5 / 7;
+            height: 100%;
+        }
+
+        .img-grid-03 {
+            grid-column: 5 / 7;
+            height: 100%;
+        }
+
+        .img-grid-04 {
+            height: 100%;
+            grid-column: 3 / 5;
+            grid-row: 3;
+        }
+
+        .img-grid-05 {
+            height: 100%;
+            grid-column: 1 / 3;
+            grid-row: 3;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #about {
+        margin-top: converter(96);
+    }
+}

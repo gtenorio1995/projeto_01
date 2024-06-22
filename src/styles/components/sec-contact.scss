@@ -1,0 +1,85 @@
+// import config
+@use '../config/colors.scss';
+@use 'sass:math';
+
+// funções
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+@media screen and (min-width: 360px) {
+    #contact {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: converter(8);
+        justify-content: center;
+        padding: converter(24) converter(8);
+
+        form {
+            display: flex;
+            flex-direction: column;
+            row-gap: converter(16);
+
+            >P {
+                display: flex;
+                flex-direction: column;
+                row-gap: converter(4);
+
+                label {
+                    font-family: 'Poppins', sans-serif;
+                    color: colors.$cl-05;
+                }
+
+                input {
+                    height: converter(32);
+                    padding-left: converter(8);
+
+                    border: 1px solif colors.$cl-03;
+                }
+
+                textarea {
+                    height: converter(120);
+                    padding-left: converter(8);
+                    padding-top: converter(8);
+                    resize: none;
+                }
+
+                #btn-enviar {
+                    padding: converter(8) converter(24);
+                    font-family: 'Poppins', sans-serif;
+                    color: colors.$cd-01;
+
+                    border: 1px solid colors.$cm-03;
+                    border-radius: converter(4);
+                    width: 35%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #contact {
+        display: grid;
+        grid-template-columns: repeat(6, 80px);
+        column-gap: converter(24);
+        justify-content: center;
+        padding: converter(24);
+
+        form {
+            display: grid;
+            grid-column: 1 / -1;
+            row-gap: converter(16);
+
+            >P {
+                input {
+                    height: converter(32);
+                }
+
+                textarea {
+                    height: converter(150);
+                }
+            }
+        }
+    }
+}

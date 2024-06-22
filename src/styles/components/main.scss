@@ -1,0 +1,22 @@
+// import config
+@use '../config/colors.scss';
+@use 'sass:math';
+
+// import components
+@use './sec-notices.scss';
+@use './sec-about.scss';
+@use './sec-contact.scss';
+@use './sec-network.scss';
+
+// funções
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+
+@media screen and (min-width: 1200px) {
+    main {
+        display: grid;
+        grid-template-columns: 60% 40%;
+    }
+}
